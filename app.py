@@ -10,7 +10,7 @@ from routes.modify import modify_bp
 from utils.cadquery_runner import cleanup_old_files
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app)
 
 app.register_blueprint(generate_bp)
 app.register_blueprint(repair_bp)
