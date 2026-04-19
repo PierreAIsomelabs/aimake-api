@@ -16,6 +16,11 @@ app.register_blueprint(generate_bp)
 app.register_blueprint(repair_bp)
 app.register_blueprint(modify_bp)
 
+@app.route("/")
+def index():
+    return open(index.html").read()
+                
+
 @app.route("/health")
 def health():
     return jsonify({"status":"ok","service":"AImake API","version":"1.0.0"})
