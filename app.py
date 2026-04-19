@@ -18,7 +18,8 @@ app.register_blueprint(modify_bp)
 
 @app.route("/")
 def index():
-    return open(index.html").read()
+    return open(os.path.join(os.path.dirname(__file__), "index.html")).read()
+
                 
 
 @app.route("/health")
