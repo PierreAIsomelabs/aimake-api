@@ -18,9 +18,9 @@ app.register_blueprint(modify_bp)
 
 @app.route("/")
 def index():
-    return open(os.path.join(os.path.dirname(__file__), "index.html")).read()
-
-                
+with open(os.path.join(os.path.dirname(__file__), "index.html"), encoding="utf-8") as f:
+    return f.read(), 200, {"Content-Type": "text/html; charset=utf-8"}
+      
 
 @app.route("/health")
 def health():
